@@ -1,5 +1,5 @@
 name: TEST AND DEPLOY
-ON: push
+on: push
 jobs:
   lint:
     runs-on: ubuntu-latest
