@@ -1,0 +1,20 @@
+name: TEST AND DEPLOY
+ON: push
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: GET Code
+        uses: actions/checkout@v3
+      - name: INSTALL Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22
+      - name: INSTALL Deps
+        run: npm ci
+      - name: LINTING
+        run: npm run lint
+      - name: Testing
+        run: npm run test
+      - name: Building
+        run: npm run build
